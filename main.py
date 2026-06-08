@@ -1,4 +1,4 @@
-from task_manager.task_utils import (
+from task_utils import (
     add_task,
     mark_task_as_complete,
     view_pending_tasks,
@@ -8,6 +8,7 @@ from task_manager.task_utils import (
 tasks = []
 
 while True:
+
     print("\n===== TASK MANAGEMENT SYSTEM =====")
     print("1. Add Task")
     print("2. Mark Task as Complete")
@@ -20,13 +21,11 @@ while True:
     if choice == "1":
         title = input("Enter task title: ")
         description = input("Enter task description: ")
-        due_date = input("Enter due date (YYYY-MM-DD): ")
-
+        due_date = input("Enter due date: ")
         add_task(tasks, title, description, due_date)
 
     elif choice == "2":
-        title = input("Enter task title to mark complete: ")
-
+        title = input("Enter task title: ")
         mark_task_as_complete(tasks, title)
 
     elif choice == "3":
@@ -40,4 +39,4 @@ while True:
         break
 
     else:
-        print("Invalid choice. Please try again.")
+        print("Invalid choice")
